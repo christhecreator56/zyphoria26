@@ -7,6 +7,7 @@
   align-items: center;
   justify-content: center;
   color: #fff;
+  overflow: hidden;
 }
 
 .textWrapper {
@@ -14,21 +15,74 @@
   text-align: center;
   padding: 0 2rem;
   opacity: 0;
-  transform: translateY(15px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: scale(0.98);
+  transition: opacity 1.2s ease, transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
+  width: 100%;
 }
 
 .textWrapper.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: scale(1);
 }
 
-.textWrapper h1, .textWrapper h2 {
-  font-family: 'Oswald', sans-serif;
-  font-weight: 700;
+.rajalakshmi {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400; /* Bebas only has one weight */
+  font-size: clamp(2.5rem, 8vw, 6rem);
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-size: clamp(1.2rem, 3.5vw, 3.5rem);
-  text-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+  display: inline-block;
+  transform: scaleX(1.1); /* Slightly less than before since Bebas is already condensed */
+  transform-origin: center;
+  text-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  margin: 0;
+  color: #fff;
+}
+
+.deptWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.department {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100; /* Montserrat Thin */
+  font-size: clamp(1.2rem, 3.5vw, 2.8rem);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.presents {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 100; /* Montserrat Thin */
+  font-size: clamp(0.9rem, 2vw, 1.4rem);
+  letter-spacing: 1.2em; /* Extremely wide spacing for cinematic feel */
+  text-transform: uppercase;
+  margin: 0;
+  opacity: 0.8;
+  padding-left: 1.2em; /* offset for letter-spacing */
+}
+
+/* Stars */
+.star {
+  position: absolute;
+  width: 30px;
+  height: auto;
+  opacity: 0;
+  filter: blur(1px) brightness(1.5) drop-shadow(0 0 10px #fff);
+  animation: starAppear 2s ease forwards;
+}
+
+.star1 { top: 20%; left: 15%; animation-delay: 0.5s; transform: rotate(15deg); }
+.star2 { top: 65%; right: 20%; animation-delay: 1.2s; transform: rotate(-10deg); width: 45px; }
+.star3 { top: 30%; right: 10%; animation-delay: 1.8s; transform: rotate(25deg); width: 25px; }
+
+@keyframes starAppear {
+  0% { transform: scale(0) rotate(0); opacity: 0; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 0.8; }
+  100% { transform: scale(1) rotate(360deg); opacity: 0.4; }
 }

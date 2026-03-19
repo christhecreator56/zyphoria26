@@ -18,11 +18,18 @@ export default function IntroSequence({ onComplete }) {
   return (
     <div className={styles.introContainer}>
       <div className={`${styles.textWrapper} ${state.text1 ? styles.visible : styles.hidden}`}>
-        <h1>RAJALAKSHMI INSTITUTE OF TECHNOLOGY</h1>
+        <h1 className={styles.rajalakshmi}>RAJALAKSHMI INSTITUTE OF TECHNOLOGY</h1>
       </div>
       <div className={`${styles.textWrapper} ${state.text2 ? styles.visible : styles.hidden}`}>
-        <h2>THE DEPARTMENT OF CSE PRESENTS</h2>
+        <div className={styles.deptWrapper}>
+          <h2 className={styles.department}>THE DEPARTMENT OF CSE</h2>
+          <h3 className={styles.presents}>PRESENTS</h3>
+        </div>
       </div>
+
+      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star1}`} />
+      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star2}`} />
+      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star3}`} />
     </div>
   );
 }
