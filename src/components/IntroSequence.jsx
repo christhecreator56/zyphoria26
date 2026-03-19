@@ -27,9 +27,9 @@ export default function IntroSequence({ onComplete }) {
         </div>
       </div>
 
-      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star1}`} />
-      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star2}`} />
-      <img src="/Star PNG.png" alt="star" className={`${styles.star} ${styles.star3}`} />
+      <img src={`${import.meta.env.BASE_URL}Star PNG.png`} alt="star" className={`${styles.star} ${styles.star1}`} />
+      <img src={`${import.meta.env.BASE_URL}Star PNG.png`} alt="star" className={`${styles.star} ${styles.star2}`} />
+      <img src={`${import.meta.env.BASE_URL}Star PNG.png`} alt="star" className={`${styles.star} ${styles.star3}`} />
     </div>
   );
 }
