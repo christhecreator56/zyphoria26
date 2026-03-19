@@ -14,7 +14,19 @@ import Footer            from './components/Footer'
 import bgImg from '/Background Removed (2).png'
 
 export default function App () {
-  const [introDone, setIntroDone] = useState(false)
+  const [introDone, setIntroDone] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return sessionStorage.getItem('zyphoria_intro_done') === 'true';
+    }
+    return false;
+  });
+
+  const [introOnMount] = useState(introDone);
+
+  const handleIntroComplete = () => {
+    setIntroDone(true);
+    sessionStorage.setItem('zyphoria_intro_done', 'true');
+  };
   const bgRef      = useRef(null)
   const moonRef    = useRef(null)
   const starRef    = useRef(null)
@@ -91,9 +103,9 @@ export default function App () {
       <CustomCursor />
       {introDone && <NavBar />}
       
-      {!introDone && <IntroSequence onComplete={() => setIntroDone(true)} />}
+      {!introDone && <IntroSequence onComplete={handleIntroComplete} />}
 
-      <div className={`${styles.mainContent} ${introDone ? styles.revealed : ''}`}>
+      <div className={`${styles.mainContent} ${introDone ? styles.revealed : ''} ${introOnMount ? styles.immediate : ''}`}>
         {/* ══════════════ HERO ══════════════ */}
         <section className={styles.hero} id="hero">
 

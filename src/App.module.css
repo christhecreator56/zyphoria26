@@ -17,6 +17,18 @@
   pointer-events: auto;
 }
 
+.mainContent.immediate {
+  opacity: 1;
+  transition: none;
+}
+
+.mainContent.immediate .heroBgLayer {
+  clip-path: circle(150% at 50% 50%);
+  -webkit-clip-path: circle(150% at 50% 50%);
+  transition: none;
+  transition-delay: 0s;
+}
+
 .heroBgLayer {
   position: absolute;
   inset: 0;
