@@ -1,0 +1,77 @@
+.appWrapper {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background: #000;
+  overflow-x: hidden;
+}
+
+.mainContent {
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  pointer-events: none;
+}
+
+.mainContent.revealed {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.heroBgLayer {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  clip-path: circle(0% at 50% 50%);
+  -webkit-clip-path: circle(0% at 50% 50%);
+  transition: clip-path 2.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transition-delay: 1.2s; 
+}
+
+.mainContent.revealed .heroBgLayer {
+  clip-path: circle(150% at 50% 50%);
+  -webkit-clip-path: circle(150% at 50% 50%);
+}
+
+.hero {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ── Background ── */
+.heroBg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.heroBgImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  will-change: transform;
+  transform: scale(1.04);
+  transition: transform 0.1s linear;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 60% 55% at 30% 40%, rgba(10, 14, 26, 0.10) 0%, transparent 70%),
+    linear-gradient(
+      to bottom,
+      rgba(6, 9, 15, 0.15) 0%,
+      rgba(6, 9, 15, 0.00) 40%,
+      rgba(6, 9, 15, 0.32) 75%,
+      rgba(6, 9, 15, 0.82) 100%
+    );
+  pointer-events: none;
+}

@@ -1,0 +1,110 @@
+.navbar {
+  position: fixed;
+  top: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: max-content;
+  animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 1.5s; /* after intro sequence */
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translate(-50%, -40px); }
+  to { opacity: 1; transform: translate(-50%, 0); }
+}
+
+.glassContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  border-radius: 50px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255,255,255,0.05);
+  transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.glassContainer:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255,255,255,0.08);
+}
+
+.link {
+  color: #fffbe8;
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  padding: 0.5rem 0.8rem;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: none;
+}
+
+.link::after {
+  content: '';
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: #f0c060;
+  transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  border-radius: 5px;
+  box-shadow: 0 0 5px #f0c060;
+}
+
+.link:hover {
+  color: #f0c060;
+}
+
+.link:hover::after {
+  width: 80%;
+}
+
+.registerBtn {
+  color: #06090f;
+  background: linear-gradient(135deg, #f0c060 0%, #e8a820 100%);
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(240, 192, 96, 0.4);
+  cursor: none;
+}
+
+.registerBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(240, 192, 96, 0.6), 0 0 0 4px rgba(240,192,96,0.2);
+}
+
+@media (max-width: 600px) {
+  .glassContainer {
+    gap: 0.5rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .link {
+    font-size: 0.7rem;
+    padding: 0.4rem 0.5rem;
+  }
+  .registerBtn {
+    font-size: 0.7rem;
+    padding: 0.5rem 0.8rem;
+  }
+}

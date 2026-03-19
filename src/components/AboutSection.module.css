@@ -1,0 +1,230 @@
+.about {
+  background: linear-gradient(
+    to bottom,
+    #06090f 0%,
+    #0a0e1a 40%,
+    #06090f 100%
+  );
+  padding: 8rem 2rem 7rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.about::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(240, 192, 96, 0.3), transparent);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.accent {
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0.7;
+  margin-bottom: 1.5rem;
+  animation: accentPulse 3s ease-in-out infinite alternate;
+}
+
+.title {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  background: linear-gradient(135deg, #fffbe8, var(--gold-soft));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.text {
+  font-family: var(--font-secondary);
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 300;
+  color: rgba(253, 246, 227, 0.7);
+  line-height: 1.9;
+  max-width: 760px;
+  margin: 0 auto 4rem;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.colspan2rowspan2 { grid-column: span 2; grid-row: span 2; }
+.colspan1rowspan1 { grid-column: span 1; grid-row: span 1; }
+.colspan2rowspan1 { grid-column: span 2; grid-row: span 1; }
+.colspan1rowspan2 { grid-column: span 1; grid-row: span 2; }
+.colspan3rowspan1 { grid-column: span 3; grid-row: span 1; }
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  padding: 2.2rem;
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3), inset 0 0 10px rgba(255,255,255,0.03);
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease, border-color 0.5s ease, background 0.5s ease, opacity 0.8s ease;
+  opacity: 0;
+  transform: translateY(50px) scale(0.96);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  cursor: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.card:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 50px rgba(240, 192, 96, 0.15), inset 0 0 20px rgba(255,255,255,0.06);
+}
+
+/* Internal smooth gradient glow on hover */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(240,192,96,0.15) 0%, transparent 70%);
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.card:hover::before {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  filter: drop-shadow(0 4px 10px rgba(240,192,96,0.4));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover .cardIcon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.card h3 {
+  font-family: var(--font-primary);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--gold-soft);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.card p {
+  font-family: var(--font-secondary);
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(253, 246, 227, 0.85);
+  line-height: 1.7;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaBtn {
+  margin-top: auto;
+  padding-top: 1.5rem;
+  z-index: 1;
+}
+
+.ctaLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #06090f;
+  background: linear-gradient(135deg, #f0c060 0%, #e8a820 100%);
+  font-family: var(--font-primary);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  padding: 0.6rem 1.4rem;
+  border-radius: 40px;
+  font-weight: 700;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 15px rgba(240, 192, 96, 0.4);
+  cursor: none;
+}
+
+.ctaLink:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(240, 192, 96, 0.6), 0 0 0 4px rgba(240,192,96,0.2);
+}
+
+
+@keyframes accentPulse {
+  from { opacity: 0.5; }
+  to   { opacity: 1.0; }
+}
+
+@media (max-width: 1024px) {
+  .bentoGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .colspan2rowspan2 { grid-column: span 2; grid-row: span 2; }
+  .colspan1rowspan1 { grid-column: span 1; grid-row: span 1; }
+  .colspan2rowspan1 { grid-column: span 2; grid-row: span 1; }
+  .colspan1rowspan2 { grid-column: span 1; grid-row: span 1; }
+  .colspan3rowspan1 { grid-column: span 2; grid-row: span 1; }
+}
+
+@media (max-width: 600px) {
+  .bentoGrid {
+    grid-template-columns: 1fr;
+  }
+  .colspan2rowspan2,
+  .colspan2rowspan1,
+  .colspan1rowspan1,
+  .colspan1rowspan2,
+  .colspan3rowspan1 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .card {
+     padding: 1.5rem;
+  }
+}

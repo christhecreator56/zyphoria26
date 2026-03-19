@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --gold:        #f0c060;
+  --gold-soft:   #f5d98a;
+  --cream:       #fdf6e3;
+  --deep-blue:   #0a0e1a;
+  --midnight:    #06090f;
+  --glow-moon:   rgba(255, 220, 80, 0.55);
+  --glow-star:   rgba(255, 240, 140, 0.45);
+  
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  
+  /* Fallbacks for older references */
+  --font-serif:  'Inter', sans-serif;
+  --font-italic: 'Inter', sans-serif;
+  
+  --ease:        cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  cursor: none; /* Custom cursor used globally */
+}
+
+body {
+  background: var(--midnight);
+  color: var(--cream);
+  font-family: var(--font-secondary);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+a, button, input, textarea, select {
+  cursor: none;
+}
