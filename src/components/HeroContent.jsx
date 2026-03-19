@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styles from './HeroContent.module.css'
 
 export default function HeroContent () {
@@ -18,9 +19,9 @@ export default function HeroContent () {
       </p>
 
       <div className={styles.cta} id="heroCta">
-        <a href="/events" className={`${styles.btn} ${styles.btnPrimary}`} id="btnRegister">
+        <Link to="/events" className={`${styles.btn} ${styles.btnPrimary}`} id="btnRegister">
           Register Now
-        </a>
+        </Link>
       </div>
 
       {/* Scroll indicator */}
