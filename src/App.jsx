@@ -73,6 +73,10 @@ export default function App () {
   }, [introDone])
 
   useEffect(() => {
+    // Disable parallax on mobile/touch for performance and better UX
+    const isMobile = window.innerWidth < 1024 || ('ontouchstart' in window);
+    if (isMobile) return;
+
     const onMove = e => {
       target.current.x = e.clientX / window.innerWidth
       target.current.y = e.clientY / window.innerHeight

@@ -86,4 +86,36 @@
       rgba(6, 9, 15, 0.82) 100%
     );
   pointer-events: none;
+  z-index: 1;
+}
+
+@media (max-width: 850px) {
+  .heroBgLayer {
+    transition-duration: 1.5s; /* Faster Reveal on mobile */
+  }
+  .heroBgLayer {
+    clip-path: circle(0% at 50% 50%);
+    -webkit-clip-path: circle(0% at 50% 50%);
+  }
+  .mainContent.revealed .heroBgLayer {
+    clip-path: circle(120% at 50% 50%);
+    -webkit-clip-path: circle(120% at 50% 50%);
+  }
+}
+
+@media (max-width: 480px) {
+  .heroOverlay {
+    background:
+      linear-gradient(
+        to bottom,
+        rgba(6, 9, 15, 0.45) 0%,
+        rgba(6, 9, 15, 0.1) 30%,
+        rgba(6, 9, 15, 0.4) 70%,
+        rgba(6, 9, 15, 0.9) 100%
+      );
+  }
+  .hero {
+    align-items: center; /* Center vertically on mobile */
+    padding-bottom: 5rem;
+  }
 }

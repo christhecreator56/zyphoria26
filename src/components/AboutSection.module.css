@@ -213,6 +213,9 @@
 }
 
 @media (max-width: 600px) {
+  .about {
+    padding: 4rem 1.5rem 4rem;
+  }
   .bentoGrid {
     grid-template-columns: 1fr;
   }
@@ -226,5 +229,8 @@
   }
   .card {
      padding: 1.5rem;
+  }
+  .title {
+    margin-bottom: 1rem;
   }
 }

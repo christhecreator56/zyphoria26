@@ -43,3 +43,9 @@ body {
 a, button, input, textarea, select {
   cursor: none;
 }
+
+@media (max-width: 1024px), (pointer: coarse) {
+  html, body, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
+}

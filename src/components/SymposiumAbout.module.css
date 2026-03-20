@@ -85,3 +85,20 @@
   from { opacity: 0.5; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1.05); }
 }
+
+@media (max-width: 600px) {
+  .aboutWrapper {
+    padding: 3rem 1rem 1rem;
+  }
+  .glassCard {
+    padding: 2.5rem 1.5rem;
+    border-radius: 20px;
+  }
+  .accent {
+    font-size: 1.4rem;
+  }
+  .text {
+    line-height: 1.6;
+    font-size: 1rem;
+  }
+}

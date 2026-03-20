@@ -452,3 +452,37 @@
     margin-bottom: 2rem;
   }
 }
+
+@media (max-width: 480px) {
+  .leftPane {
+    padding: 6rem 1rem 2rem;
+  }
+  .regForm {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+  }
+  .formRow {
+    grid-template-columns: 1fr;
+  }
+  .rightPane {
+    padding: 1.5rem 1rem;
+  }
+  .tabContainer {
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 20px;
+  }
+  .tabBtn, .activeTab {
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+  .stripHeader {
+    padding: 1.2rem 1rem;
+  }
+  .stripTitle {
+    font-size: 1.1rem;
+  }
+  .stripBodyInner {
+    padding: 0 1rem 1.5rem;
+  }
+}

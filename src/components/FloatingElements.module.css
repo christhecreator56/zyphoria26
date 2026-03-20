@@ -133,8 +133,28 @@
 }
 
 /* ══════════════════ RESPONSIVE ══════════════════ */
-@media (max-width: 768px) {
+@media (max-width: 850px) {
   .moon { top: 3%; right: 3%; width: clamp(140px, 35vw, 220px); }
-  .star { top: 15%; left: 8%; width: clamp(80px, 20vw, 140px); }
-  .tree { left: -5%; width: clamp(120px, 30vw, 200px); }
+  .star { top: 12%; left: 5%; width: clamp(80px, 20vw, 140px); }
+  .tree { left: -5%; width: clamp(140px, 35vw, 220px); }
+}
+
+@media (max-width: 480px) {
+  .moon {
+    top: 5%;
+    right: -2rem;
+    width: 150px;
+    opacity: 0.6;
+  }
+  .star {
+    top: 35%;
+    left: -1rem;
+    width: 80px;
+    opacity: 0.5;
+  }
+  .tree {
+    left: -2rem;
+    width: 140px;
+    opacity: 0.8;
+  }
 }
